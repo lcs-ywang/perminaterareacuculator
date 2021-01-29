@@ -53,9 +53,29 @@ print("Sp: Squared-based pyramid")
 print("Tp: Triangular prism")//keep following output on the same line
 let type = readLine()!
 
+print("What part of surface area do you want to cauculate?")
+print("B: Base")
+print("L: Lateral Surface")
+print("T: Total")
+let part = readLine()!
+
+print("What is the length?")
+let length = readLine()!
+
+print("What is the side?")
+let s = readLine()!
+
+print("What is the heigh?")
+let h = readLine()!
 
 
 //MARK: Process
+func SurfaceAreaFormulasCaculation (height: Double, side: Double, length: Double) -> Double {
+    
+    
+    
+}
+
 
 
 //MARK: Output
