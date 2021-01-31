@@ -53,28 +53,33 @@ print("Sp: Squared-based pyramid")
 print("Tp: Triangular prism")//keep following output on the same line
 let type = readLine()!
 
-print("What part of surface area do you want to cauculate?")
-print("B: Base")
-print("L: Lateral Surface")
-print("T: Total")
-let part = readLine()!
 
-print("What is the length?")
-let length = readLine()!
 
-print("What is the side?")
-let s = readLine()!
-
-print("What is the heigh?")
-let h = readLine()!
-
+print("")
 
 //MARK: Process
-func SurfaceAreaFormulasCaculation (height: Double, side: Double, length: Double) -> Double {
+func BaseAreaOfCylinder(height: Double, radius: Double) -> Double {
     
-    
-    
+    return Double.pi * radius * radius
 }
+    
+    
+switch type {
+    case "Cy":
+        // Input
+        print("You selected Cylender.")
+        print("")
+        print("Please enter the radius: ", terminator: "")
+        let givenradius = Double(readLine()!)!
+        print("Please enter the height: ", terminator: "")
+        let givenheight = Double(readLine()!)!
+        // Process
+        let result = BaseAreaOfCylinder(height: givenheight, radius: givenradius)
+        // Output
+        print("The base area of the Cylinder is \(result) square units.")
+    default:
+        print("Please enter a valid selection next time.")
+    }
 
 
 
