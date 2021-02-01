@@ -98,43 +98,67 @@ print("")
 
 //MARK: Process
 
-// the function to calculate the base area of Cylinder
+/// find the base area of Cylinder
+/// - Parameters:
+///   - height: The height of a cylinder is the distance between the two circular bases.
+///   - radius: The distance from the center of a cylinder to its edge.
+/// - Returns:base area of Cylinder
 func BaseAreaOfCylinder(height: Double, radius: Double) -> Double {
     
     return Double.pi * radius * radius
 }
 
-// the function to calculate the lateral area of Cylinder
+/// // the function to calculate the lateral area of Cylinder
+/// - Parameters:
+///   - height: The height of a cylinder is the distance between the two circular bases.
+///   - radius: The distance from the center of a cylinder to its edge.
+/// - Returns: the lateral area of Cylinde
 func LateralSurfaceAreaOfCylinder(height: Double, radius: Double) -> Double {
     
     return 2 * Double.pi * radius * height
 }
 
-// the function to calculate the total area of Cylinder
+/// the function to calculate the total area of Cylinder
+/// - Parameters:
+///   - height: The height of a cylinder is the distance between the two circular bases.
+///   - radius: The distance from the center of a cylinder to its edge.
+/// - Returns:  the total area of Cylinde
 func TotalSurfaceAreaOfCylinder(height: Double, radius: Double) -> Double {
     
     return 2 * Double.pi * radius * height + Double.pi * radius * radius
 }
 
-//the function to calculate surface area of Sphere
+/// the function to calculate surface area of Sphere
+/// - Parameter radius: A radius of a circle or sphere is any of the line segments from its center to its perimeter.
+/// - Returns: surface area of Sphere
 func SurfaceAreaOfSphere(radius: Double) -> Double {
     
     return 4 * Double.pi * radius *  radius
 }
 
-// the function to calculate the base area of Cone
+/// the function to calculate the base area of Cone
+/// - Parameter radius: A radius is the distance from the circle's middle to its perimeter, which is known as its circumference. The radius of a cone is the radius of its circular base.
+/// - Returns: the base area of Cone
 func BaseAreaOfCone(radius: Double) -> Double {
-    
+
     return Double.pi * radius * radius
 }
 
-// the function to calculate the lateral area of Cone
+/// the function to calculate the lateral area of Cone
+/// - Parameters:
+///   - side: the apex to the edge of the base is the side of a cone
+///   - radius: A radius is the distance from the circle's middle to its perimeter, which is known as its circumference. The radius of a cone is the radius of its circular base.
+/// - Returns: the lateral area of Cone
 func LateralSurfaceAreaOfCone(side: Double, radius: Double) -> Double {
     
     return Double.pi * radius * side
 }
 
-// the function to calculate the total area of Cone
+/// the function to calculate the total area of Cone
+/// - Parameters:
+///   - side: the apex to the edge of the base is the side of a cone
+///   - radius: A radius is the distance from the circle's middle to its perimeter, which is known as its circumference. The radius of a cone is the radius of its circular base.
+/// - Returns: the total area of Cone
 func TotalSurfaceAreaOfCone(side: Double, radius: Double) -> Double {
     
     return Double.pi * radius * side + Double.pi * radius * radius
@@ -142,41 +166,76 @@ func TotalSurfaceAreaOfCone(side: Double, radius: Double) -> Double {
 }
 
 
-// the function to calculate base surface area of Squared-based pyramid.
+/// the function to calculate base surface area of Squared-based pyramid.
+/// - Parameter base: the length of the four sides of the base in  a Squared-based pyramid
+/// - Returns: base surface area of Squared-based pyramid
 func baseAreaOfSquaredbasedpyramid(base: Double) -> Double {
     
     return base * base
 }
 
-// the function to calculate the triangular surface area of Squared-based pyramid.
+/// the function to calculate the triangular surface area of Squared-based pyramid.
+/// - Parameters:
+///   - side: the apex to the edge of the base is the side of a Squared-based pyramid.
+///   - base: the length of the four sides of the base in  a Squared-based pyramid
+/// - Returns: triangular surface area of Squared-based pyramid
 func triangularAreaOfSquaredbasedpyramid(side: Double, base: Double) -> Double {
     
     return (base * side)/2
 }
 
-// the function to calculate the total surface area of Squared-based pyramid.
+/// The function to calculate the total surface area of Squared-based pyramid.
+/// - Parameters:
+///   - side: the apex to the edge of the base is the side of a Squared-based pyramid.
+///   - base: the length of the four sides of the base in  a Squared-based pyramid
+/// - Returns: total surface area of Squared-based pyramid
 func TotalSurfaceAreaOfSquaredbasedpyramid(side: Double, base: Double) -> Double {
     
     return (base * side)/2 + base * base
     
 }
 
-// the function to calculate the total surface area of rectungular prism.
 
+/// The function to calculate the total surface area of rectungular prism.
+/// - Parameters:
+///   - length: the length of the side of the base in a rectangular prism
+///   - width: length of the other side of the base in a rectangular prism
+///   - height: the length between the top surface to the bottom surface in a rectangular prism.
+/// - Returns: the total surface area of rectungular prism
 func areaOfRectungularPrism(length: Double, width: Double, height:Double) -> Double {
     
     return length * width * height
     
 }
 
+/// The function to calculate the total base area of triangular prism.
+/// - Parameters:
+///   - baseB: one side of the bottom of a triangular prism
+///   - length: the length between the opposite point of the base B to the side b
+/// - Returns: the total base area of triangular prism
 func BaseAreaTriangularPrism(baseB: Double, length: Double) -> Double {
     return (baseB * length)/2
 }
 
+/// The function to calculate the triangular area of triangular prism
+/// - Parameters:
+///   - baseA: the length of one side of the base in the triangular prism
+///   - baseB: the length of one side of the base in the triangular prism
+///   - baseC: the length of one side of the base in the triangular prism
+///   - height: the length between the top surface to the bottom surface in a triangular prism.
+/// - Returns: the triangular base area of triangular prism
 func RectangularAreasTriangularPrism(baseA: Double, baseB: Double, baseC: Double, height: Double) -> Double {
     return baseA * height + baseB * height + baseC * height
 }
 
+/// The function to calculate the total area of triangular prism
+/// - Parameters:
+///   - baseA: the length of one side of the base in the triangular prism
+///   - baseB: the length of one side of the base in the triangular prism
+///   - baseC: the length of one side of the base in the triangular prism
+///   - height: the length between the top surface to the bottom surface in a triangular prism.
+///   - length: the length between the opposite point of the base B to the side b
+/// - Returns: the total surface area of the triangular prism
 func TotalAreasTriangularPrism(baseA: Double, baseB: Double, baseC: Double, height: Double, length: Double) -> Double {
     return baseA * height + baseB * height + baseC * height + (baseB * length)/2
 }
