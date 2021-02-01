@@ -49,9 +49,8 @@ print("What Geometric Feature do you want to cauculate?")
 print("Cy: Cylinder")
 print("Sp: Sphere")
 print("Co: Cone")
-print("Sp: Squared-based pyramid")
+print("Sbp: Squared-based pyramid")
 print("Rp: Rectangualr prism")
-print("Sp: Squared-based pyramid")
 print("Tp: Triangular prism")//keep following output on the same line
 let type = readLine()!
 
@@ -75,7 +74,15 @@ case "Co":
     print("Co lateral: The lateral surface of the Cone")
     print("Co total: The total surface of the Cone")
     thearea = readLine()!
-    
+case "Sbp":
+    print("Which part do you want to cauculate?")
+    print("Sbp base: The base of the Squared-based pyramid")
+    print("Sbp triangle: The lateral surface of the Squared-based pyramid")
+    print("Sbp total: The total surface of the Squared-based pyramid")
+    thearea = readLine()!
+case "Rp":
+    print("You selected the Rectangular Prism.")
+    thearea = "Rp"
     
 default:
     print("Please enter a valid selection next time.")
@@ -128,8 +135,33 @@ func TotalSurfaceAreaOfCone(side: Double, radius: Double) -> Double {
     
 }
 
+
+// the function to calculate base surface area of Squared-based pyramid.
+func baseAreaOfSquaredbasedpyramid(base: Double) -> Double {
     
- 
+    return base * base
+}
+
+// the function to calculate the triangular surface area of Squared-based pyramid.
+func triangularAreaOfSquaredbasedpyramid(side: Double, base: Double) -> Double {
+    
+    return (base * side)/2
+}
+
+// the function to calculate the total surface area of Squared-based pyramid.
+func TotalSurfaceAreaOfSquaredbasedpyramid(side: Double, base: Double) -> Double {
+    
+    return (base * side)/2 + base * base
+    
+}
+
+// the function to calculate the total surface area of rectungular prism.
+
+func areaOfRectungularPrism(length: Double, width: Double, height:Double) -> Double {
+    
+    return length * width * height
+    
+}
 
 //the switch statemnet of cases
 switch thearea {
@@ -230,6 +262,49 @@ case "Co total":
         // Process
         let result = TotalSurfaceAreaOfCone(side: givenside, radius: givenradius)
         // Output
+    print("")
+        print("The total area of the Cone is \(result) square units.")
+
+//the base area of Cone
+    case "Sbp base":
+        // Input
+        print("You selected the base area of Squared-based pyramid.")
+        print("")
+        print("Please enter the base: ", terminator: "")
+        let givenbase = Double(readLine()!)!
+        // Process
+        let result = baseAreaOfSquaredbasedpyramid(base: givenbase)
+        // Output
+        print("")
+        print("The base area of the Squared-based pyramid is \(result) square units.")
+   
+//the lateral surface area of Cylinder
+case "Sbp triangle":
+        // Input
+        print("You selected the triangular surface area of Squared-based pyramid.")
+        print("")
+        print("Please enter the base: ", terminator: "")
+        let givenbase = Double(readLine()!)!
+        print("Please enter the side: ", terminator: "")
+        let givenside = Double(readLine()!)!
+        // Process
+        let result = triangularAreaOfSquaredbasedpyramid(side: givenside, base: givenbase)
+        // Output
+    print("")
+        print("The triangular area of the Cone is \(result) square units.")
+   
+//the total area of Cylinder
+case "Sbp total":
+        // Input
+        print("You selected the total surface area of Squared-based pyramid.")
+        print("")
+    print("Please enter the base: ", terminator: "")
+    let givenbase = Double(readLine()!)!
+    print("Please enter the side: ", terminator: "")
+    let givenside = Double(readLine()!)!
+        // Process
+        let result = TotalSurfaceAreaOfSquaredbasedpyramid(side: givenside, base: givenbase)
+    // Output
     print("")
         print("The total area of the Cone is \(result) square units.")
 
