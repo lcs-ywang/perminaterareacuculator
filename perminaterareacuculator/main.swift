@@ -83,10 +83,16 @@ case "Sbp":
 case "Rp":
     print("You selected the Rectangular Prism.")
     thearea = "Rp"
-    
+case "Tp":
+print("Which part do you want to cauculate?")
+print("Tp base: The base of the triangular prism")
+print("Tp rectangle: The rectangular surface of the triangular prism")
+print("Tp total: The total surface of the triangular prism")
+    thearea = readLine()!
+
 default:
     print("Please enter a valid selection next time.")
-}
+} //the default case
 
 print("")
 
@@ -161,6 +167,18 @@ func areaOfRectungularPrism(length: Double, width: Double, height:Double) -> Dou
     
     return length * width * height
     
+}
+
+func BaseAreaTriangularPrism(baseB: Double, length: Double) -> Double {
+    return (baseB * length)/2
+}
+
+func RectangularAreasTriangularPrism(baseA: Double, baseB: Double, baseC: Double, height: Double) -> Double {
+    return baseA * height + baseB * height + baseC * height
+}
+
+func TotalAreasTriangularPrism(baseA: Double, baseB: Double, baseC: Double, height: Double, length: Double) -> Double {
+    return baseA * height + baseB * height + baseC * height + (baseB * length)/2
 }
 
 //the switch statemnet of cases
@@ -307,9 +325,75 @@ case "Sbp total":
     // Output
     print("")
         print("The total area of the Cone is \(result) square units.")
+//the area of rectangular prism
+case "Rp":
+        // Input
+        print("")
+    print("Please enter the length: ", terminator: "")
+       let givenLength = Double(readLine()!)!
+       print("Please enter the width: ", terminator: "")
+       let givenWidth = Double(readLine()!)!
+    print("Please enter the height: ", terminator: "")
+       let givenheight = Double(readLine()!)!
+        // Process
+    let result = areaOfRectungularPrism(length: givenLength, width: givenWidth, height:givenheight)
+        // Output
+    print("")
+        print("The surface area of the Sphere is \(result) square units.")
+    
+case "Tp base":
+        // Input
+    print("You selected the base area of the Triangular Prism.")
+        print("")
+    print("Please enter the lenth of the side B of the base: ", terminator: "")
+       let givenbaseB = Double(readLine()!)!
+       print("Please enter the length: ", terminator: "")
+       let givenlength = Double(readLine()!)!
+        // Process
+    let result = BaseAreaTriangularPrism(baseB:givenbaseB, length: givenlength)
+        // Output
+    print("")
+        print("The base area of the Triangular Prism is \(result) square units.")
 
+case "Tp rectangle":
+        // Input
+    print("You selected the rectangular areas of the Triangular Prism.")
+        print("")
+    print("Please enter the lenth of the side A of the base: ", terminator: "")
+       let givenbaseA = Double(readLine()!)!
+    print("Please enter the lenth of the side B of the base: ", terminator: "")
+       let givenbaseB = Double(readLine()!)!
+    print("Please enter the lenth of the side C of the base: ", terminator: "")
+       let givenbaseC = Double(readLine()!)!
+       print("Please enter the height: ", terminator: "")
+       let givenheight = Double(readLine()!)!
+        // Process
+    let result = RectangularAreasTriangularPrism(baseA:givenbaseA, baseB:givenbaseB, baseC: givenbaseC, height: givenheight)
+        // Output
+    print("")
+        print("The rectangular areas of the Triangular Prism is \(result) square units.")
 
+case "Tp total":
+        // Input
+    print("You selected the total area of the Triangular Prism.")
+        print("")
+    print("Please enter the lenth of the side A of the base: ", terminator: "")
+       let givenbaseA = Double(readLine()!)!
+    print("Please enter the lenth of the side B of the base: ", terminator: "")
+       let givenbaseB = Double(readLine()!)!
+    print("Please enter the lenth of the side C of the base: ", terminator: "")
+       let givenbaseC = Double(readLine()!)!
+       print("Please enter the height: ", terminator: "")
+       let givenheight = Double(readLine()!)!
+    print("Please enter the length: ", terminator: "")
+    let givenlength = Double(readLine()!)!
+        // Process
+    let result = TotalAreasTriangularPrism(baseA:givenbaseA, baseB:givenbaseB, baseC: givenbaseC, height: givenheight, length: givenlength)
+        // Output
+    print("")
+        print("The total area of the Triangular Prism is \(result) square units.")
 
 default:
     print("Please enter a valid selection next time.")
 }
+
